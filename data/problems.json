@@ -1,50 +1,457 @@
 [
     {
         "id": 1,
-        "title": "AI Image Classification",
-        "description": "Develop a machine learning model to classify images into predefined categories.",
-        "difficulty": "medium",
-        "points": 200,
+        "title": "AI-Powered Diabetic Retinopathy Diagnosis",
+        "description": "Develop a deep learning system that analyzes retinal images to detect early signs of diabetic retinopathy. The project should explore advanced image preprocessing and feature extraction techniques to assist healthcare professionals in early intervention.",
+        "difficulty": "hard",
+        "points": 350,
         "tags": [
-            "Machine Learning",
-            "Computer Vision",
-            "Classification"
+            "Deep Learning",
+            "Healthcare",
+            "Image Processing",
+            "Medical Diagnostics"
         ]
     },
     {
         "id": 2,
-        "title": "Natural Language Processing Chatbot",
-        "description": "Build a chatbot that can understand and respond to natural language queries.",
-        "difficulty": "hard",
-        "points": 300,
+        "title": "Predictive Hospital Readmission Analytics",
+        "description": "Create a machine learning model using electronic health records to predict patient readmission risks. Focus on integrating demographics, clinical history, and treatment data to support proactive patient care and reduce readmission rates.",
+        "difficulty": "medium",
+        "points": 250,
         "tags": [
-            "NLP",
-            "Chatbot",
-            "AI"
+            "Healthcare",
+            "Predictive Analytics",
+            "Machine Learning",
+            "Data Integration"
         ]
     },
     {
         "id": 3,
-        "title": "Data Visualization Dashboard",
-        "description": "Create an interactive dashboard to visualize AI model performance metrics.",
-        "difficulty": "easy",
-        "points": 100,
+        "title": "Real-Time Financial Fraud Detection",
+        "description": "Design an AI system that employs anomaly detection techniques to flag fraudulent transactions in real time. Address challenges like imbalanced datasets and evolving fraud patterns while ensuring scalability and accuracy.",
+        "difficulty": "hard",
+        "points": 300,
         "tags": [
-            "Data Visualization",
-            "Dashboard",
-            "Frontend"
+            "Anomaly Detection",
+            "Finance",
+            "Real-time Systems",
+            "Security"
         ]
     },
     {
         "id": 4,
-        "title": "Reinforcement Learning for Game AI",
-        "description": "Implement a reinforcement learning algorithm to play a simple game.",
+        "title": "Stock Market Sentiment & Trend Forecasting",
+        "description": "Build a predictive model that fuses sentiment analysis from financial news and social media with technical market indicators. The goal is to forecast stock price movements and provide insights for informed investment strategies.",
+        "difficulty": "hard",
+        "points": 300,
+        "tags": [
+            "Sentiment Analysis",
+            "Finance",
+            "NLP",
+            "Predictive Modeling"
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Drone-Based Crop Disease Identification",
+        "description": "Develop an AI-driven solution that utilizes drone-captured imagery to detect crop diseases early. Emphasize robust dataset creation, image segmentation, and actionable insights to support precision agriculture.",
+        "difficulty": "medium",
+        "points": 250,
+        "tags": [
+            "Computer Vision",
+            "Agriculture",
+            "Drones",
+            "Image Segmentation"
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Smart Irrigation Scheduling via Reinforcement Learning",
+        "description": "Create a reinforcement learning system that optimizes water usage in agriculture. The model should adapt to varying weather conditions, soil moisture levels, and crop types to enhance irrigation efficiency.",
+        "difficulty": "hard",
+        "points": 300,
+        "tags": [
+            "Reinforcement Learning",
+            "Agriculture",
+            "Optimization",
+            "Sustainability"
+        ]
+    },
+    {
+        "id": 7,
+        "title": "Urban Traffic Flow Optimization",
+        "description": "Design an AI algorithm to predict and manage traffic congestion in urban settings. Utilize real-time sensor data to dynamically adjust traffic signal timings and propose efficient routing solutions.",
+        "difficulty": "medium",
+        "points": 250,
+        "tags": [
+            "Smart Cities",
+            "Optimization",
+            "Real-time Systems",
+            "Traffic Management"
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Predictive Maintenance for Vehicular Systems",
+        "description": "Build a machine learning model to forecast vehicle maintenance needs using IoT sensor data. The solution should focus on time series analysis and anomaly detection to prevent breakdowns and improve road safety.",
+        "difficulty": "medium",
+        "points": 200,
+        "tags": [
+            "Predictive Maintenance",
+            "IoT",
+            "Time Series Analysis",
+            "Transportation"
+        ]
+    },
+    {
+        "id": 9,
+        "title": "Adaptive E-commerce Recommendation Engine",
+        "description": "Develop a recommendation system that personalizes product suggestions in real time based on customer behavior. Explore collaborative filtering and dynamic data analysis to enhance user engagement and sales.",
+        "difficulty": "medium",
+        "points": 250,
+        "tags": [
+            "Recommendation Systems",
+            "E-commerce",
+            "Collaborative Filtering",
+            "Personalization"
+        ]
+    },
+    {
+        "id": 10,
+        "title": "AI-Optimized Inventory Management",
+        "description": "Create a predictive model that forecasts inventory needs and prevents stock-outs in retail. Integrate sales data, seasonal trends, and supply chain logistics for efficient inventory control.",
+        "difficulty": "medium",
+        "points": 200,
+        "tags": [
+            "Predictive Analytics",
+            "Retail",
+            "Supply Chain",
+            "Inventory Management"
+        ]
+    },
+    {
+        "id": 11,
+        "title": "Personalized Intelligent Tutoring System",
+        "description": "Design an AI-driven tutoring platform that adapts educational content to individual student performance. Leverage data analytics and adaptive learning paths to enhance engagement and learning outcomes.",
+        "difficulty": "medium",
+        "points": 250,
+        "tags": [
+            "Education Technology",
+            "Personalization",
+            "Adaptive Learning",
+            "Data Analytics"
+        ]
+    },
+    {
+        "id": 12,
+        "title": "NLP-Based Plagiarism Detection Tool",
+        "description": "Develop a tool that uses natural language processing to detect plagiarism by identifying paraphrased content. The system should analyze semantic similarities and cross-reference with a large corpus of documents.",
+        "difficulty": "medium",
+        "points": 200,
+        "tags": [
+            "NLP",
+            "Education",
+            "Text Analysis",
+            "Semantic Similarity"
+        ]
+    },
+    {
+        "id": 13,
+        "title": "Misinformation Filter for Social Media",
+        "description": "Create an AI model to identify and filter out misinformation on social media platforms. Utilize text analysis and network behavior metrics to improve the reliability of online content.",
+        "difficulty": "hard",
+        "points": 300,
+        "tags": [
+            "NLP",
+            "Social Media",
+            "Content Moderation",
+            "Text Classification"
+        ]
+    },
+    {
+        "id": 14,
+        "title": "Real-Time Public Sentiment Analyzer",
+        "description": "Build a sentiment analysis tool that tracks public opinion on social issues in real time. The project should process vast social media data streams and provide insights for policymakers and researchers.",
+        "difficulty": "medium",
+        "points": 250,
+        "tags": [
+            "Sentiment Analysis",
+            "Social Media",
+            "NLP",
+            "Real-time Systems"
+        ]
+    },
+    {
+        "id": 15,
+        "title": "Air Quality Prediction Using AI",
+        "description": "Develop an AI system that predicts air quality indices by integrating data from weather stations, pollution sensors, and satellite imagery. Emphasize data fusion techniques to offer actionable insights for urban environments.",
+        "difficulty": "medium",
+        "points": 250,
+        "tags": [
+            "Environmental Monitoring",
+            "Data Fusion",
+            "Predictive Modeling",
+            "Smart Cities"
+        ]
+    },
+    {
+        "id": 16,
+        "title": "Wildfire Forecasting with Satellite Data",
+        "description": "Create a predictive model that forecasts wildfire occurrences using historical data, weather conditions, and satellite imagery. Focus on feature extraction and early-warning systems to aid disaster management.",
+        "difficulty": "hard",
+        "points": 300,
+        "tags": [
+            "Disaster Management",
+            "Remote Sensing",
+            "Predictive Modeling",
+            "Feature Extraction"
+        ]
+    },
+    {
+        "id": 17,
+        "title": "Energy Consumption Optimization in Smart Cities",
+        "description": "Build an AI-powered system that optimizes energy usage in urban buildings. Utilize predictive analytics and real-time monitoring to reduce energy waste and promote sustainability.",
+        "difficulty": "medium",
+        "points": 250,
+        "tags": [
+            "Smart Cities",
+            "Energy Optimization",
+            "Sustainability",
+            "IoT"
+        ]
+    },
+    {
+        "id": 18,
+        "title": "Optimized Waste Collection Routing",
+        "description": "Design a model that uses real-time data to optimize waste collection routes in smart cities. The solution should integrate IoT sensor inputs and routing algorithms to improve urban waste management efficiency.",
+        "difficulty": "medium",
+        "points": 200,
+        "tags": [
+            "Smart Cities",
+            "Route Optimization",
+            "IoT",
+            "Logistics"
+        ]
+    },
+    {
+        "id": 19,
+        "title": "Autonomous Indoor Robot Navigation",
+        "description": "Develop an AI algorithm that enables robots to navigate complex indoor environments autonomously. Focus on sensor integration, obstacle detection, and dynamic path planning to enhance operational efficiency.",
+        "difficulty": "hard",
+        "points": 350,
+        "tags": [
+            "Robotics",
+            "Computer Vision",
+            "Path Planning",
+            "Autonomous Systems"
+        ]
+    },
+    {
+        "id": 20,
+        "title": "Reinforcement Learning for Robotic Arm Control",
+        "description": "Create a control system for robotic arms using reinforcement learning. The project should enable the arm to perform precise assembly tasks by learning optimal movements through iterative trial and error.",
         "difficulty": "hard",
         "points": 350,
         "tags": [
             "Reinforcement Learning",
+            "Robotics",
+            "Control Systems",
+            "Automation"
+        ]
+    },
+    {
+        "id": 21,
+        "title": "Predictive Maintenance in Manufacturing",
+        "description": "Build a machine learning model that forecasts machinery breakdowns by analyzing sensor data and operational logs. Aim to reduce downtime and maintenance costs through proactive intervention strategies.",
+        "difficulty": "medium",
+        "points": 250,
+        "tags": [
+            "Predictive Maintenance",
+            "Manufacturing",
+            "IoT",
+            "Time Series Analysis"
+        ]
+    },
+    {
+        "id": 22,
+        "title": "AI-Driven Production Scheduling",
+        "description": "Develop an AI system to optimize production schedules based on demand forecasting and resource allocation. Integrate real-time data from manufacturing processes to enhance overall efficiency.",
+        "difficulty": "medium",
+        "points": 250,
+        "tags": [
+            "Manufacturing",
+            "Optimization",
+            "Scheduling",
+            "Resource Allocation"
+        ]
+    },
+    {
+        "id": 23,
+        "title": "Network Intrusion Detection System",
+        "description": "Design a machine learning model to identify cybersecurity threats by analyzing network traffic patterns. The focus should be on real-time anomaly detection and adaptive threat response.",
+        "difficulty": "hard",
+        "points": 300,
+        "tags": [
+            "Cybersecurity",
+            "Anomaly Detection",
+            "Network Analysis",
+            "Security"
+        ]
+    },
+    {
+        "id": 24,
+        "title": "Adaptive Cybersecurity Defense",
+        "description": "Create an AI-powered intrusion detection system that continuously adapts to emerging cybersecurity threats. Employ deep learning techniques to recognize novel attack patterns and mitigate risks promptly.",
+        "difficulty": "hard",
+        "points": 350,
+        "tags": [
+            "Cybersecurity",
+            "Deep Learning",
+            "Adaptive Systems",
+            "Threat Detection"
+        ]
+    },
+    {
+        "id": 25,
+        "title": "Adaptive Game AI for Dynamic Challenges",
+        "description": "Build a game AI that adjusts its behavior based on real-time analysis of player actions. The system should create dynamic challenges and personalized gaming experiences, enhancing overall playability.",
+        "difficulty": "medium",
+        "points": 250,
+        "tags": [
             "Game AI",
-            "Deep Learning"
+            "Adaptive Systems",
+            "Player Modeling",
+            "Entertainment"
+        ]
+    },
+    {
+        "id": 26,
+        "title": "Procedural Content Generation in Games",
+        "description": "Develop an AI system that generates unique game levels and puzzles using procedural content generation. Focus on ensuring variability and maintaining game balance to keep the gaming experience fresh and engaging.",
+        "difficulty": "medium",
+        "points": 250,
+        "tags": [
+            "Game Development",
+            "Procedural Generation",
+            "Content Creation",
+            "Entertainment"
+        ]
+    },
+    {
+        "id": 27,
+        "title": "Real-Time Augmented Reality Content Generator",
+        "description": "Create an AI system that produces augmented reality content in real time based on user context and environment. The project should blend computer vision and context-aware algorithms to deliver immersive experiences.",
+        "difficulty": "hard",
+        "points": 350,
+        "tags": [
+            "Augmented Reality",
+            "Computer Vision",
+            "Content Generation",
+            "Context Awareness"
+        ]
+    },
+    {
+        "id": 28,
+        "title": "Interactive Virtual Assistant for VR Training",
+        "description": "Design a virtual assistant that leverages AI to provide interactive support during immersive VR training sessions. Ensure the system can adapt to trainee performance and deliver timely feedback to improve learning outcomes.",
+        "difficulty": "hard",
+        "points": 300,
+        "tags": [
+            "Virtual Reality",
+            "Training Systems",
+            "Adaptive Learning",
+            "Human-Computer Interaction"
+        ]
+    },
+    {
+        "id": 29,
+        "title": "Renewable Energy Production Forecasting",
+        "description": "Build a predictive model that forecasts renewable energy output from solar and wind sources. The project should integrate weather data and historical performance metrics to aid in efficient grid management.",
+        "difficulty": "medium",
+        "points": 250,
+        "tags": [
+            "Renewable Energy",
+            "Predictive Modeling",
+            "Time Series Analysis",
+            "Sustainability"
+        ]
+    },
+    {
+        "id": 30,
+        "title": "Smart Grid Energy Balancing",
+        "description": "Develop an AI optimization tool for smart grids to dynamically balance energy supply and demand. Utilize real-time sensor data and predictive analytics to enhance the reliability and efficiency of energy distribution.",
+        "difficulty": "hard",
+        "points": 300,
+        "tags": [
+            "Smart Grid",
+            "Energy Management",
+            "Optimization",
+            "Real-time Systems"
+        ]
+    },
+    {
+        "id": 31,
+        "title": "Emotion-Adaptive AI Chatbot",
+        "description": "Create an AI-powered chatbot that adapts its responses based on user emotions. Combine natural language processing with sentiment analysis to provide empathetic and effective customer service.",
+        "difficulty": "medium",
+        "points": 250,
+        "tags": [
+            "Chatbot",
+            "Emotion Recognition",
+            "NLP",
+            "Customer Service"
+        ]
+    },
+    {
+        "id": 32,
+        "title": "Consumer Trend Forecasting for Marketing",
+        "description": "Develop a machine learning model that predicts emerging consumer trends by analyzing social media and sales data. The project should help marketers identify and adapt to shifting consumer behaviors.",
+        "difficulty": "medium",
+        "points": 250,
+        "tags": [
+            "Marketing",
+            "Trend Analysis",
+            "Predictive Analytics",
+            "Social Media Analysis"
+        ]
+    },
+    {
+        "id": 33,
+        "title": "AI-Driven Contract Analysis in Legal Tech",
+        "description": "Build a tool that automates contract analysis by identifying potential risks and suggesting improvements. Use natural language processing to parse legal documents and extract critical clauses efficiently.",
+        "difficulty": "hard",
+        "points": 300,
+        "tags": [
+            "Legal Tech",
+            "NLP",
+            "Document Analysis",
+            "Risk Assessment"
+        ]
+    },
+    {
+        "id": 34,
+        "title": "Personalized Content Recommendation for Streaming",
+        "description": "Design a recommendation engine that curates personalized content for streaming platforms. Leverage collaborative filtering and real-time data analysis to match viewer preferences with relevant content.",
+        "difficulty": "medium",
+        "points": 250,
+        "tags": [
+            "Recommendation Systems",
+            "Streaming Services",
+            "Personalization",
+            "Collaborative Filtering"
+        ]
+    },
+    {
+        "id": 35,
+        "title": "Urban Growth Simulation and Infrastructure Forecasting",
+        "description": "Create an AI simulation model that forecasts urban growth and infrastructure needs using demographic, economic, and environmental data. The project should support urban planners in developing sustainable and future-ready city strategies.",
+        "difficulty": "hard",
+        "points": 300,
+        "tags": [
+            "Urban Planning",
+            "Simulation",
+            "Forecasting",
+            "Sustainability"
         ]
     }
 ]

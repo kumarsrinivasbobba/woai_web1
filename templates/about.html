@@ -1,38 +1,369 @@
 {% extends 'base.html' %}
 
-{% block title %}About{% endblock %}
+{% block title %}About - Wonders of AI 2.0{% endblock %}
 
 {% block content %}
 <section class="about-section">
     <div class="container">
-        <h1 class="page-title">About Wonders of AI</h1>
+        <h1 class="page-title">About Wonders of AI 2.0</h1>
+        
+        <!-- Event banner as a card -->
+        <div class="card event-banner-card">
+            <div class="event-details">
+                <div class="event-date">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>March 13, 2025 10 AM - March 14, 2025 10 AM</span>
+                </div>
+                <div class="event-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Kalasalingam Academy of Research and Education</span>
+                </div>
+            </div>
+            <div class="event-actions">
+                <a href="https://chat.whatsapp.com/D9d2bziZAYzKYJpGZeAO0j" target="_blank" class="btn-outline">Join WhatsApp</a>
+            </div>
+        </div>
         
         <div class="about-content">
-            <div class="about-text">
-                <h2>Our Mission</h2>
-                <p>The Wonders of AI Hackathon aims to bring together the brightest minds in technology to push the boundaries of artificial intelligence and create innovative solutions to real-world problems.</p>
+            <!-- About and Mission as cards -->
+            <div class="card-grid">
+                <div class="card about-card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-info-circle"></i> About the Event</h2>
+                    </div>
+                    <div class="card-content">
+                        <p>Welcome to Wonders of AI 2.0 Hackathon! A pivotal event hosted by KARE Open Source Society as part of <strong>Euphoria 2025: Techno-Management meets Sustainability</strong>, at Kalasalingam Academy of Research and Education.</p>
+                    </div>
+                </div>
                 
-                <h2>The Event</h2>
-                <p>Our 24-hour hackathon provides participants with the opportunity to collaborate, create, and compete in developing cutting-edge AI applications. With mentorship from industry leaders, workshops on the latest technologies, and prizes worth over $10,000, this is an event you won't want to miss.</p>
-                
-                <h2>Who Should Participate</h2>
-                <p>Whether you're a seasoned AI researcher, a machine learning enthusiast, a software developer, or a creative problem-solver, there's a place for you at Wonders of AI. We welcome participants of all backgrounds and skill levels who share a passion for innovation and technology.</p>
+                <div class="card mission-card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+                    </div>
+                    <div class="card-content">
+                        <p>The Wonders of AI Hackathon aims to bring together the brightest minds in technology to push the boundaries of artificial intelligence and create innovative solutions to real-world problems.</p>
+                    </div>
+                </div>
             </div>
             
+            <!-- Info cards -->
+            <div class="info-cards">
+                <div class="card info-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-users"></i> Team Specifications</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li>A team must consist of a maximum of 5 members</li>
+                            <li>Every team must have a unique team name</li>
+                            <li>Each team should have a team representative</li>
+                            <li>Inter-college and inter-specialization team members are allowed</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card info-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-trophy"></i> Prizes</h3>
+                    </div>
+                    <div class="card-content">
+                        <p class="prize-pool">Prize Pool: INR 50,000</p>
+                        <ul>
+                            <li>Participation certificates for all participants</li>
+                            <li>Internship opportunity for best performers</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card info-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-clipboard-list"></i> General Rules</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li>24 hours to develop their solution</li>
+                            <li>Projects will be viewed by the judging panel, and the top 3 projects will be selected</li>
+                            <li>Finalists will be scored on originality, understanding of the problem statement, and the viability of the solution</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Organizers section -->
             <div class="organizers">
-                <h2>Organizers</h2>
+                <h2 class="section-title"><span>Organizers</span></h2>
                 <div class="organizer-cards">
-                    <div class="organizer-card">
+                    <div class="card organizer-card">
                         <div class="organizer-image">
-                            <img src="https://media.licdn.com/dms/image/v2/C5103AQHGuLeOlnRZ1A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517080032921?e=1747267200&v=beta&t=g9SlQQgx4VQkUDwAplmtbY4Ps9ruYmtAYG6MhVP0P-4" alt="Organizer 1">
+                            <img src="https://media.licdn.com/dms/image/v2/C5103AQHGuLeOlnRZ1A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517080032921?e=1747267200&v=beta&t=g9SlQQgx4VQkUDwAplmtbY4Ps9ruYmtAYG6MhVP0P-4" alt="Dr. R. Raja Subramanian">
                         </div>
                         <h3>Dr. R. Raja Subramanian</h3>
                         <p class="organizer-title">KARE OSS Charter official</p>
-                        <p>AI Research Scientist with 5+ years of experience in machine learning and artificial intelligence.</p>
+                        <p>AI Research Scientist with expertise in machine learning and artificial intelligence.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+{% endblock %}
+
+{% block styles %}
+<style>
+    .about-section {
+        padding: 80px 0;
+    }
+    
+    .page-title {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2.5rem;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    /* Card base styles */
+    .card {
+        background-color: var(--card-color);
+        border-radius: var(--border-radius);
+        padding: 25px;
+        box-shadow: var(--box-shadow);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+    
+    .card-header {
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 15px;
+    }
+    
+    .card-header h2, .card-header h3 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--primary-color);
+        margin: 0;
+    }
+    
+    .card-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .card-header h3 {
+        font-size: 1.4rem;
+    }
+    
+    .card-content {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    /* Grid for About and Mission cards */
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-bottom: 40px;
+    }
+    
+    /* Event Banner Card */
+    .event-banner-card {
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        border-left: 4px solid var(--primary-color);
+    }
+    
+    .event-details {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .event-date, .event-location {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.1rem;
+    }
+    
+    .event-date i, .event-location i {
+        color: var(--primary-color);
+    }
+    
+    .event-actions {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .about-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    /* Info Cards */
+    .info-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+    }
+    
+    /* Reset some default card padding for info cards to align with others */
+    .info-card.card {
+        padding: 0;
+    }
+    
+    .info-card .card-header {
+        padding: 25px 25px 15px 25px;
+    }
+    
+    .info-card .card-content {
+        padding: 0 25px 25px 25px;
+    }
+    
+    .info-card ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .info-card li {
+        margin-bottom: 10px;
+        padding-left: 20px;
+        position: relative;
+    }
+    
+    .info-card li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--primary-color);
+    }
+    
+    .prize-pool {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--accent-color);
+        margin-bottom: 15px;
+    }
+    
+    /* Organizers Section */
+    .organizers {
+        margin-top: 20px;
+    }
+    
+    .section-title {
+        text-align: center;
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .section-title span {
+        display: inline-block;
+        position: relative;
+        padding: 0 20px;
+        color: var(--primary-color);
+    }
+    
+    .section-title span::before, .section-title span::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 100vw;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .section-title span::before {
+        right: 100%;
+    }
+    
+    .section-title span::after {
+        left: 100%;
+    }
+    
+    .organizer-cards {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    /* Reset padding since we're adding card class */
+    .organizer-card.card {
+        padding: 25px;
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+    
+    .organizer-image {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 15px;
+        border: 3px solid var(--primary-color);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease;
+    }
+    
+    .organizer-image:hover {
+        transform: translateY(-5px);
+    }
+    
+    .organizer-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .organizer-image:hover img {
+        transform: scale(1.1);
+    }
+    
+    .organizer-title {
+        color: var(--accent-color);
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+    
+    @media (max-width: 768px) {
+        .event-banner-card {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .event-actions {
+            width: 100%;
+            justify-content: flex-start;
+            margin-top: 15px;
+        }
+        
+        .card-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .info-cards {
+            grid-template-columns: 1fr;
+        }
+        
+        .organizer-cards {
+            justify-content: center;
+        }
+    }
+</style>
 {% endblock %}
