@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Leaderboard - Wonders of AI Hackathon{% endblock %}
+
+{% block content %}
+<section class="leaderboard">
+    <div class="container">
+        <h1 class="section-title">Leaderboard</h1>
+        <p style="text-align: center; margin-bottom: 40px;">Track the progress of teams competing in the hackathon.</p>
+        
+        {% if teams %}
+            <table class="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Team</th>
+                        <th>Score</th>
+                        <th>Problems Solved</th>
+                        <th>Last Submission</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for team in teams %}
+                    <tr>
+                        <td><span class="rank {% if loop.index <= 3 %}rank-{{ loop.index }}{% endif %}">{{ loop.index }}</span></td>
+                        <td>{{ team.name }}</td>
+                        <td>{{ team.score }}</td>
+                        <td>{{ team.problems_solved }}</td>
+                        <td>{{ team.last_submission }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <div class="empty-state">
+                <div class="empty-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3>No teams yet</h3>
+                <p>The competition hasn't started yet or no teams have submitted solutions.</p>
+                <a href="{{ url_for('problems') }}" class="btn-primary">Explore Problems</a>
+            </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

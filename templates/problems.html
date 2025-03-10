@@ -1,0 +1,244 @@
+{% extends "base.html" %}
+
+{% block title %}Problems - Wonders of AI Hackathon{% endblock %}
+
+{% block content %}
+<section class="problems">
+    <div class="container">
+        <h1 class="section-title">Problem Statements</h1>
+        <p style="text-align: center; margin-bottom: 40px;">Explore a variety of cutting-edge AI challenges and see innovative solutions!</p>
+        
+        {% if problems %}
+            {% for problem in problems %}
+            <div class="problem-card">
+                <div class="problem-header">
+                    <h3 class="problem-title">{{ problem.title }}</h3>
+                    <span class="problem-difficulty difficulty-{{ problem.difficulty|lower }}">{{ problem.difficulty }}</span>
+                </div>
+                <p class="problem-description">{{ problem.description }}</p>
+                <div class="problem-footer">
+                    <div class="problem-tags">
+                        {% for tag in problem.tags %}
+                        <span class="problem-tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    <a href="#" class="btn-secondary" data-id="{{ problem.id }}">View Details</a>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div style="text-align: center; padding: 50px 0;">
+                <i class="fas fa-info-circle" style="font-size: 3rem; color: var(--text-muted); margin-bottom: 20px;"></i>
+                <p>Problem statements will be announced soon. Stay tuned!</p>
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Problem Detail Modal -->
+<div id="problem-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2 id="modal-title"></h2>
+        <span id="modal-difficulty" class="problem-difficulty"></span>
+        <div id="modal-description" style="margin-top: 15px;"></div>
+        
+        <div id="requirements-section" style="margin-top: 20px;">
+            <h3>Requirements</h3>
+            <ul id="modal-requirements"></ul>
+        </div>
+        
+        <div id="criteria-section" style="margin-top: 20px;">
+            <h3>Evaluation Criteria</h3>
+            <ul id="modal-criteria"></ul>
+        </div>
+        
+        <div id="resources-section" style="margin-top: 20px;">
+            <h3>Resources</h3>
+            <ul id="modal-resources"></ul>
+        </div>
+        
+        <div style="margin-top: 20px;">
+            <h3>Tags</h3>
+            <div class="problem-tags" id="modal-tags"></div>
+        </div>
+        
+        <div style="margin-top: 30px;">
+            <a href="{{ url_for('resources') }}" class="btn-primary">View Learning Resources</a>
+            <a href="#" onclick="window.open('https://github.com/wonders-of-ai/hackathon-challenges', '_blank')" class="btn-secondary">View Code Examples</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Modal functionality
+    const modal = document.getElementById('problem-modal');
+    const closeModal = document.getElementsByClassName('close-modal')[0];
+    const viewButtons = document.querySelectorAll('.btn-secondary[data-id]');
+    
+    // Close modal when clicking on X
+    closeModal.onclick = function() {
+        modal.style.display = "none";
+    }
+    
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    
+    // Problem data
+    const problemDetails = {
+        {% for problem in problems %}
+        "{{ problem.id }}": {
+            title: "{{ problem.title }}",
+            difficulty: "{{ problem.difficulty }}",
+            description: "{{ problem.description }}",
+            requirements: {{ problem.get('requirements', [])|tojson }},
+            criteria: {{ problem.get('criteria', [])|tojson }},
+            resources: {{ problem.get('resources', [])|tojson }},
+            tags: {{ problem.tags|tojson }}
+        },
+        {% endfor %}
+    };
+    
+    // Open modal with problem details
+    viewButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const problemId = this.getAttribute('data-id');
+            const problem = problemDetails[problemId];
+            
+            if (problem) {
+                document.getElementById('modal-title').textContent = problem.title;
+                document.getElementById('modal-difficulty').textContent = problem.difficulty;
+                document.getElementById('modal-difficulty').className = 'problem-difficulty difficulty-' + problem.difficulty.toLowerCase();
+                document.getElementById('modal-description').textContent = problem.description;
+                
+                // Requirements
+                const reqSection = document.getElementById('requirements-section');
+                const reqList = document.getElementById('modal-requirements');
+                reqList.innerHTML = '';
+                
+                if (problem.requirements && problem.requirements.length > 0) {
+                    reqSection.style.display = 'block';
+                    problem.requirements.forEach(req => {
+                        const li = document.createElement('li');
+                        li.textContent = req;
+                        reqList.appendChild(li);
+                    });
+                } else {
+                    reqSection.style.display = 'none';
+                }
+                
+                // Evaluation Criteria
+                const critSection = document.getElementById('criteria-section');
+                const critList = document.getElementById('modal-criteria');
+                critList.innerHTML = '';
+                
+                if (problem.criteria && problem.criteria.length > 0) {
+                    critSection.style.display = 'block';
+                    problem.criteria.forEach(crit => {
+                        const li = document.createElement('li');
+                        li.textContent = crit;
+                        critList.appendChild(li);
+                    });
+                } else {
+                    critSection.style.display = 'none';
+                }
+                
+                // Resources - Fixed to handle resource objects with name and url properties
+                const resSection = document.getElementById('resources-section');
+                const resList = document.getElementById('modal-resources');
+                resList.innerHTML = '';
+                
+                if (problem.resources && problem.resources.length > 0) {
+                    resSection.style.display = 'block';
+                    problem.resources.forEach(res => {
+                        const li = document.createElement('li');
+                        if (typeof res === 'object' && res.name && res.url) {
+                            const link = document.createElement('a');
+                            link.href = res.url;
+                            link.target = '_blank';
+                            link.textContent = res.name;
+                            li.appendChild(link);
+                        } else {
+                            li.textContent = res;
+                        }
+                        resList.appendChild(li);
+                    });
+                } else {
+                    resSection.style.display = 'none';
+                }
+                
+                // Tags
+                const tagsDiv = document.getElementById('modal-tags');
+                tagsDiv.innerHTML = '';
+                
+                if (problem.tags && problem.tags.length > 0) {
+                    problem.tags.forEach(tag => {
+                        const span = document.createElement('span');
+                        span.className = 'problem-tag';
+                        span.textContent = tag;
+                        tagsDiv.appendChild(span);
+                    });
+                }
+                
+                modal.style.display = "block";
+            }
+        });
+    });
+    
+    // Add modal styling for better display
+    document.head.insertAdjacentHTML('beforeend', `
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            position: relative;
+            background-color: var(--card-color);
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            width: 80%;
+            max-width: 800px;
+            animation: fadeIn 0.3s;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: var(--text-muted);
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close-modal:hover {
+            color: var(--text-color);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    `);
+</script>
+{% endblock %}

@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+
+{% block title %}Wonders of AI Hackathon - Explore the Future{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <h1>WONDERS OF AI</h1>
+        <p class="subtitle">Explore the Boundaries of Artificial Intelligence</p>
+        
+        <div class="countdown">
+            <div class="countdown-item">
+                <span class="count" id="days">00</span>
+                <span class="label">Days</span>
+            </div>
+            <div class="countdown-item">
+                <span class="count" id="hours">00</span>
+                <span class="label">Hours</span>
+            </div>
+            <div class="countdown-item">
+                <span class="count" id="minutes">00</span>
+                <span class="label">Minutes</span>
+            </div>
+            <div class="countdown-item">
+                <span class="count" id="seconds">00</span>
+                <span class="label">Seconds</span>
+            </div>
+        </div>
+        
+        <div class="hero-buttons">
+            <a href="#featured-problems" class="btn-primary">Explore Challenges</a>
+            <a href="{{ url_for('resources') }}" class="btn-outline">View Resources</a>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container">
+        <h2 class="section-title">Why Explore AI?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>Revolutionary Technology</h3>
+                <p>AI is transforming every industry from healthcare and finance to entertainment and transportation.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Cutting-edge Problems</h3>
+                <p>Discover real-world challenges that are being solved using state-of-the-art AI technologies.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>Future Skills</h3>
+                <p>Learn about the skills and technologies that will shape the future of work and innovation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="featured-problems" id="featured-problems">
+    <div class="container">
+        <h2 class="section-title">Featured Challenges</h2>
+        <div class="features-grid">
+            <div class="problem-card">
+                <div class="problem-header">
+                    <h3 class="problem-title">AI-Powered Healthcare Diagnostics</h3>
+                    <span class="problem-difficulty difficulty-medium">Medium</span>
+                </div>
+                <p class="problem-description">Develop an AI system that can analyze medical images to detect and classify various conditions with high accuracy.</p>
+                <div class="problem-footer">
+                    <div class="problem-tags">
+                        <span class="problem-tag">Computer Vision</span>
+                        <span class="problem-tag">Healthcare</span>
+                    </div>
+                    <a href="{{ url_for('problems') }}" class="btn-secondary">View Details</a>
+                </div>
+            </div>
+            <div class="problem-card">
+                <div class="problem-header">
+                    <h3 class="problem-title">Sustainable Energy Optimization</h3>
+                    <span class="problem-difficulty difficulty-hard">Hard</span>
+                </div>
+                <p class="problem-description">Create an AI-based system to optimize energy consumption and reduce carbon footprint in smart buildings.</p>
+                <div class="problem-footer">
+                    <div class="problem-tags">
+                        <span class="problem-tag">Reinforcement Learning</span>
+                        <span class="problem-tag">Sustainability</span>
+                    </div>
+                    <a href="{{ url_for('problems') }}" class="btn-secondary">View Details</a>
+                </div>
+            </div>
+            <div class="problem-card">
+                <div class="problem-header">
+                    <h3 class="problem-title">Intelligent Traffic Management</h3>
+                    <span class="problem-difficulty difficulty-easy">Easy</span>
+                </div>
+                <p class="problem-description">Build a traffic management system that uses AI to optimize signal timings and reduce congestion in urban areas.</p>
+                <div class="problem-footer">
+                    <div class="problem-tags">
+                        <span class="problem-tag">Optimization</span>
+                        <span class="problem-tag">Smart Cities</span>
+                    </div>
+                    <a href="{{ url_for('problems') }}" class="btn-secondary">View Details</a>
+                </div>
+            </div>
+        </div>
+        <div class="center-button" style="text-align: center; margin-top: 40px;">
+            <a href="{{ url_for('problems') }}" class="btn-primary">View All Challenges</a>
+        </div>
+    </div>
+</section>
+
+<section class="ai-showcase">
+    <div class="container">
+        <h2 class="section-title">AI Innovation Showcase</h2>
+        <p class="section-description" style="text-align: center; margin-bottom: 40px;">Explore some of the most impressive AI solutions from around the world</p>
+        
+        <div class="showcase-grid">
+            <div class="showcase-card">
+                <div class="showcase-image">
+                    <img src="https://via.placeholder.com/400x250" alt="AI Innovation 1">
+                </div>
+                <div class="showcase-content">
+                    <h3>Neural Voice Cloning</h3>
+                    <p>AI system that can replicate any voice with just seconds of audio data.</p>
+                    <a href="#" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="showcase-card">
+                <div class="showcase-image">
+                    <img src="https://via.placeholder.com/400x250" alt="AI Innovation 2">
+                </div>
+                <div class="showcase-content">
+                    <h3>Predictive Analytics Dashboard</h3>
+                    <p>Data visualization platform that uses AI to forecast market trends.</p>
+                    <a href="#" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="showcase-card">
+                <div class="showcase-image">
+                    <img src="https://via.placeholder.com/400x250" alt="AI Innovation 3">
+                </div>
+                <div class="showcase-content">
+                    <h3>Autonomous Drone Navigation</h3>
+                    <p>Self-guiding drone system that can navigate complex environments.</p>
+                    <a href="#" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Countdown Timer
+    const hackathonDate = new Date('March 13, 2025 09:00:00').getTime();
+    
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = hackathonDate - now;
+        
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        document.getElementById('days').innerHTML = days.toString().padStart(2, '0');
+        document.getElementById('hours').innerHTML = hours.toString().padStart(2, '0');
+        document.getElementById('minutes').innerHTML = minutes.toString().padStart(2, '0');
+        document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
+    }
+    
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+</script>
+{% endblock %}

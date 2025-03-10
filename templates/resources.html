@@ -1,0 +1,286 @@
+{% extends "base.html" %}
+
+{% block title %}Learning Resources - Wonders of AI Hackathon{% endblock %}
+
+{% block content %}
+<section class="resources">
+    <div class="container">
+        <h1 class="section-title">Learning Resources</h1>
+        <p style="text-align: center; margin-bottom: 40px;">Expand your AI knowledge with these curated learning materials to help you tackle our challenges!</p>
+        
+        <!-- AI Foundations -->
+        <div class="resource-category">
+            <h2><i class="fas fa-brain"></i> AI Foundations</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <h3>Machine Learning Crash Course</h3>
+                        <span class="resource-tag">Google</span>
+                    </div>
+                    <p>A self-study guide for aspiring machine learning practitioners covering ML concepts, real-world examples, lessons with video lectures, and hands-on practice exercises.</p>
+                    <div class="resource-footer">
+                        <a href="https://developers.google.com/machine-learning/crash-course" target="_blank" class="btn-secondary">Access Resource</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <h3>Deep Learning Specialization</h3>
+                        <span class="resource-tag">Coursera</span>
+                    </div>
+                    <p>Andrew Ng's comprehensive course series covering neural networks, deep learning, convolutional networks, sequence models, and more.</p>
+                    <div class="resource-footer">
+                        <a href="https://www.coursera.org/specializations/deep-learning" target="_blank" class="btn-secondary">Access Resource</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <h3>Fast.ai Practical Deep Learning</h3>
+                        <span class="resource-tag">Fast.ai</span>
+                    </div>
+                    <p>A free course designed for anyone with some coding experience who wants to learn how to apply deep learning and machine learning to practical problems.</p>
+                    <div class="resource-footer">
+                        <a href="https://course.fast.ai/" target="_blank" class="btn-secondary">Access Resource</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Computer Vision -->
+        <div class="resource-category">
+            <h2><i class="fas fa-eye"></i> Computer Vision</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <h3>PyTorch Vision Tutorial</h3>
+                        <span class="resource-tag">PyTorch</span>
+                    </div>
+                    <p>Learn how to use PyTorch for training image classifiers, object detection models, and image segmentation systems.</p>
+                    <div class="resource-footer">
+                        <a href="https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html" target="_blank" class="btn-secondary">Access Resource</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <h3>TensorFlow Image Classification</h3>
+                        <span class="resource-tag">TensorFlow</span>
+                    </div>
+                    <p>Tutorials on building image classification models using TensorFlow, including transfer learning and custom dataset training.</p>
+                    <div class="resource-footer">
+                        <a href="https://www.tensorflow.org/tutorials/images/classification" target="_blank" class="btn-secondary">Access Resource</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <h3>OpenCV Documentation & Tutorials</h3>
+                        <span class="resource-tag">OpenCV</span>
+                    </div>
+                    <p>Comprehensive tutorials and documentation for computer vision tasks using the popular OpenCV library.</p>
+                    <div class="resource-footer">
+                        <a href="https://opencv.org/opencv-free-course/" target="_blank" class="btn-secondary">Access Resource</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Natural Language Processing -->
+        <div class="resource-category">
+            <h2><i class="fas fa-comment-alt"></i> Natural Language Processing</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <h3>Hugging Face Transformers</h3>
+                        <span class="resource-tag">Hugging Face</span>
+                    </div>
+                    <p>Use state-of-the-art NLP models like BERT, GPT-2, and T5 with easy-to-use APIs and pre-trained models.</p>
+                    <div class="resource-footer">
+                        <a href="https://huggingface.co/course/chapter1/1" target="_blank" class="btn-secondary">Access Resource</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <h3>NLTK Documentation</h3>
+                        <span class="resource-tag">NLTK</span>
+                    </div>
+                    <p>Comprehensive guide to the Natural Language Toolkit (NLTK) for Python, covering text processing, classification, tokenization, and more.</p>
+                    <div class="resource-footer">
+                        <a href="https://www.nltk.org/book/" target="_blank" class="btn-secondary">Access Resource</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <h3>spaCy Course</h3>
+                        <span class="resource-tag">spaCy</span>
+                    </div>
+                    <p>Interactive course teaching you how to use spaCy for advanced NLP tasks with practical exercises and examples.</p>
+                    <div class="resource-footer">
+                        <a href="https://course.spacy.io/en/" target="_blank" class="btn-secondary">Access Resource</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Data Visualization -->
+        <div class="resource-category">
+            <h2><i class="fas fa-chart-bar"></i> Data Visualization</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <h3>D3.js Documentation</h3>
+                        <span class="resource-tag">D3.js</span>
+                    </div>
+                    <p>Learn how to create dynamic, interactive data visualizations in the browser using D3.js.</p>
+                    <div class="resource-footer">
+                        <a href="https://d3js.org/getting-started" target="_blank" class="btn-secondary">Access Resource</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <h3>Plotly Python Documentation</h3>
+                        <span class="resource-tag">Plotly</span>
+                    </div>
+                    <p>Create interactive plots and dashboards using Plotly's Python graphing library and Dash framework.</p>
+                    <div class="resource-footer">
+                        <a href="https://plotly.com/python/" target="_blank" class="btn-secondary">Access Resource</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <h3>Tableau Public Resources</h3>
+                        <span class="resource-tag">Tableau</span>
+                    </div>
+                    <p>Free resources for learning Tableau Public for creating interactive data visualizations without programming.</p>
+                    <div class="resource-footer">
+                        <a href="https://public.tableau.com/app/resources/learn" target="_blank" class="btn-secondary">Access Resource</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Reinforcement Learning -->
+        <div class="resource-category">
+            <h2><i class="fas fa-gamepad"></i> Reinforcement Learning</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <h3>OpenAI Spinning Up</h3>
+                        <span class="resource-tag">OpenAI</span>
+                    </div>
+                    <p>An educational resource designed to teach anyone deep reinforcement learning, from fundamentals to advanced techniques.</p>
+                    <div class="resource-footer">
+                        <a href="https://spinningup.openai.com/en/latest/" target="_blank" class="btn-secondary">Access Resource</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <h3>Gymnasium Documentation</h3>
+                        <span class="resource-tag">Farama</span>
+                    </div>
+                    <p>Learn how to use the Gymnasium (formerly OpenAI Gym) toolkit for developing and comparing reinforcement learning algorithms.</p>
+                    <div class="resource-footer">
+                        <a href="https://gymnasium.farama.org/index.html" target="_blank" class="btn-secondary">Access Resource</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <h3>Stable-Baselines3 Documentation</h3>
+                        <span class="resource-tag">Stable-Baselines3</span>
+                    </div>
+                    <p>A set of reliable implementations of reinforcement learning algorithms in PyTorch with clear documentation and examples.</p>
+                    <div class="resource-footer">
+                        <a href="https://stable-baselines3.readthedocs.io/en/master/" target="_blank" class="btn-secondary">Access Resource</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Code Examples Repository -->
+        <div class="github-section" style="margin-top: 60px; padding: 30px; background-color: var(--card-color); border-radius: var(--border-radius); box-shadow: var(--box-shadow); text-align: center;">
+            <i class="fab fa-github" style="font-size: 3rem; color: var(--text-muted); margin-bottom: 15px;"></i>
+            <h2>Wonders of AI Code Examples</h2>
+            <p>Explore our GitHub repository containing code examples, starter templates, and utility functions to help you get started with our hackathon challenges.</p>
+            <a href="https://github.com/wonders-of-ai/hackathon-challenges" target="_blank" class="btn-primary" style="margin-top: 20px;"><i class="fab fa-github"></i> Visit Repository</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block styles %}
+<style>
+    .resource-category {
+        margin-bottom: 50px;
+    }
+    
+    .resource-category h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        color: var(--primary-color);
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 10px;
+    }
+    
+    .resource-category h2 i {
+        margin-right: 10px;
+    }
+    
+    .resources-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    
+    .resource-card {
+        background-color: var(--card-color);
+        border-radius: var(--border-radius);
+        padding: 20px;
+        box-shadow: var(--box-shadow);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .resource-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .resource-header {
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    
+    .resource-header h3 {
+        font-size: 1.3rem;
+        margin: 0;
+    }
+    
+    .resource-tag {
+        background-color: var(--accent-color);
+        color: white;
+        font-size: 0.8rem;
+        padding: 3px 10px;
+        border-radius: 20px;
+    }
+    
+    .resource-footer {
+        margin-top: 20px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    @media (max-width: 768px) {
+        .resources-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+{% endblock %}

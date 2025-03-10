@@ -1,0 +1,44 @@
+[
+    {
+        "name": "AI Avengers",
+        "score": 850,
+        "problems_solved": 4,
+        "last_submission": "2025-03-09 14:23:45"
+    },
+    {
+        "name": "Neural Nexus",
+        "score": 720,
+        "problems_solved": 3,
+        "last_submission": "2025-03-09 10:15:30"
+    },
+    {
+        "name": "Deep Thinkers",
+        "score": 680,
+        "problems_solved": 3,
+        "last_submission": "2025-03-08 22:05:12"
+    },
+    {
+        "name": "Code Wizards",
+        "score": 550,
+        "problems_solved": 2,
+        "last_submission": "2025-03-08 18:30:45"
+    },
+    {
+        "name": "Quantum Coders",
+        "score": 480,
+        "problems_solved": 2,
+        "last_submission": "2025-03-08 16:42:20"
+    },
+    {
+        "name": "Binary Brains",
+        "score": 320,
+        "problems_solved": 1,
+        "last_submission": "2025-03-07 20:15:10"
+    },
+    {
+        "name": "ML Mavericks",
+        "score": 300,
+        "problems_solved": 1,
+        "last_submission": "2025-03-07 15:40:22"
+    }
+]

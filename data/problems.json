@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "title": "AI Image Classification",
+        "description": "Develop a machine learning model to classify images into predefined categories.",
+        "difficulty": "medium",
+        "points": 200,
+        "tags": [
+            "Machine Learning",
+            "Computer Vision",
+            "Classification"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Natural Language Processing Chatbot",
+        "description": "Build a chatbot that can understand and respond to natural language queries.",
+        "difficulty": "hard",
+        "points": 300,
+        "tags": [
+            "NLP",
+            "Chatbot",
+            "AI"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Data Visualization Dashboard",
+        "description": "Create an interactive dashboard to visualize AI model performance metrics.",
+        "difficulty": "easy",
+        "points": 100,
+        "tags": [
+            "Data Visualization",
+            "Dashboard",
+            "Frontend"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Reinforcement Learning for Game AI",
+        "description": "Implement a reinforcement learning algorithm to play a simple game.",
+        "difficulty": "hard",
+        "points": 350,
+        "tags": [
+            "Reinforcement Learning",
+            "Game AI",
+            "Deep Learning"
+        ]
+    }
+]

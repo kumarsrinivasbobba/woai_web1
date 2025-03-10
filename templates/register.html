@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<section class="register-section">
+    <div class="container">
+        <h1 class="page-title">Registration</h1>
+        <p class="section-description">Join the Wonders of AI Hackathon and showcase your innovation!</p>
+        
+        <div class="registration-container">
+            <form class="registration-form" method="POST">
+                <div class="form-group">
+                    <label for="team-name">Team Name</label>
+                    <input type="text" id="team-name" name="team_name" required>
+                </div>
+                
+                <div class="team-members-container">
+                    <h3>Team Members</h3>
+                    <p class="form-hint">1-4 members per team</p>
+                    
+                    <div class="team-member">
+                        <h4>Team Leader</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="leader-name">Name</label>
+                                <input type="text" id="leader-name" name="leader_name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="leader-email">Email</label>
+                                <input type="email" id="leader-email" name="leader_email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="leader-phone">Phone Number</label>
+                                <input type="tel" id="leader-phone" name="leader_phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="leader-role">Role/Expertise</label>
+                                <input type="text" id="leader-role" name="leader_role" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="additional-members"></div>
+                    
+                    <button type="button" id="add-member-btn" class="btn-secondary">+ Add Team Member</button>
+                </div>
+                
+                <div class="form-group">
+                    <label for="challenge-preference">Preferred Challenge (Optional)</label>
+                    <select id="challenge-preference" name="challenge_preference">
+                        <option value="">-- Select a challenge --</option>
+                        <option value="1">AI for Healthcare</option>
+                        <option value="2">Smart City Solutions</option>
+                        <option value="3">Natural Language Processing</option>
+                        <option value="4">Computer Vision Innovation</option>
+                    </select>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the <a href="#" class="terms-link">Terms and Conditions</a></label>
+                </div>
+                
+                <div class="form-submit">
+                    <button type="submit" class="btn-primary">Register Team</button>
+                </div>
+            </form>
+            
+            <div class="registration-info">
+                <div class="info-card">
+                    <h3>Important Information</h3>
+                    <ul class="info-list">
+                        <li><i class="fas fa-calendar"></i> <strong>Event Dates:</strong> April 15-16, 2025</li>
+                        <li><i class="fas fa-clock"></i> <strong>Duration:</strong> 24 Hours</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Virtual + Tech Center</li>
+                        <li><i class="fas fa-laptop-code"></i> <strong>Format:</strong> Hybrid (In-person & Remote)</li>
+                        <li><i class="fas fa-users"></i> <strong>Team Size:</strong> 1-4 members</li>
+                        <li><i class="fas fa-trophy"></i> <strong>Prizes:</strong> $10,000 in total prizes</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Need Help?</h3>
+                    <p>Contact us at <a href="mailto:support@wondersofai.com">support@wondersofai.com</a> or join our <a href="#">Discord community</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Add team member functionality
+    const addMemberBtn = document.getElementById('add-member-btn');
+    const additionalMembers = document.getElementById('additional-members');
+    let memberCount = 1;
+    
+    addMemberBtn.addEventListener('click', function() {
+        if (memberCount >= 4) {
+            alert('Maximum 4 team members allowed.');
+            return;
+        }
+        
+        const memberDiv = document.createElement('div');
+        memberDiv.className = 'team-member';
+        memberDiv.innerHTML = `
+            <div class="member-header">
+                <h4>Team Member ${memberCount}</h4>
+                <button type="button" class="remove-member-btn">&times;</button>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="member${memberCount}-name">Name</label>
+                    <input type="text" id="member${memberCount}-name" name="member${memberCount}_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="member${memberCount}-email">Email</label>
+                    <input type="email" id="member${memberCount}-email" name="member${memberCount}_email" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="member${memberCount}-phone">Phone Number</label>
+                    <input type="tel" id="member${memberCount}-phone" name="member${memberCount}_phone">
+                </div>
+                <div class="form-group">
+                    <label for="member${memberCount}-role">Role/Expertise</label>
+                    <input type="text" id="member${memberCount}-role" name="member${memberCount}_role" required>
+                </div>
+            </div>
+        `;
+        
+        additionalMembers.appendChild(memberDiv);
+        memberCount++;
+        
+        // Add event listener to remove button
+        const removeBtn = memberDiv.querySelector('.remove-member-btn');
+        removeBtn.addEventListener('click', function() {
+            additionalMembers.removeChild(memberDiv);
+            memberCount--;
+            
+            // Update member numbers
+            const members = additionalMembers.querySelectorAll('.team-member');
+            members.forEach((member, index) => {
+                const header = member.querySelector('h4');
+                header.textContent = `Team Member ${index + 1}`;
+            });
+        });
+    });
+</script>
+{% endblock %}

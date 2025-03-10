@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Wonders of AI Hackathon{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='site.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand-container">
+                <a href="{{ url_for('home') }}" class="navbar-brand">
+                    <i class="fas fa-robot"></i> Wonders of AI
+                </a>
+                <div class="logos-container">
+                    <a href="https://kalasalingam.ac.in" target="_blank" class="logo-link">
+                        <img src="https://www.mathworks.com/academia/tah-portal/kalasalingam-academy-of-research-and-education-31429510/_jcr_content/schoolLogo.adapt.full.medium.png/1594770280674.png" alt="Kalasalingam University" class="university-logo">
+                    </a>
+                    <span class="logo-divider"></span>
+                    <div class="club-logo-wrapper">
+                        <img src="https://i.ibb.co/pKMnSwt/modified-image-removebg-preview.png" alt="Club Logo" class="club-logo">
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="navbar-menu">
+                <a href="{{ url_for('home') }}" class="navbar-item">Home</a>
+                <a href="{{ url_for('problems') }}" class="navbar-item">Problems</a>
+                <a href="{{ url_for('leaderboard') }}" class="navbar-item">Leaderboard</a>
+                <a href="{{ url_for('schedule') }}" class="navbar-item">Schedule</a>
+                <a href="{{ url_for('resources') }}" class="navbar-item">Resources</a>
+                <a href="{{ url_for('about') }}" class="navbar-item">About</a>
+                <a href="#" class="navbar-item highlight-btn" onclick="scrollToSection('featured-problems')">Explore Challenges</a>
+            </div>
+        </div>
+    </nav>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="flash-messages">
+        {% for category, message in messages %}
+        <div class="flash flash-{{ category }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <div class="scene-container" id="bg-animation"></div>
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <div class="container">
+            <!-- Add logos to footer -->
+            <div class="footer-logos">
+                <div class="footer-logos-container">
+                    <a href="https://kalasalingam.ac.in" target="_blank" class="footer-logo-link">
+                        <img src="https://www.mathworks.com/academia/tah-portal/kalasalingam-academy-of-research-and-education-31429510/_jcr_content/schoolLogo.adapt.full.medium.png/1594770280674.png" alt="Kalasalingam University" class="footer-university-logo">
+                    </a>
+                    <div class="footer-club-logo-wrapper">
+                        <img src="https://i.ibb.co/pKMnSwt/modified-image-removebg-preview.png" alt="Club Logo" class="footer-club-logo">
+                    </div>
+                </div>
+                <p class="footer-logos-text">A collaboration between Kalasalingam Academy of Research and Education and KARE OSS</p>
+            </div>
+            
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="{{ url_for('home') }}" class="navbar-brand">
+                        <i class="fas fa-robot"></i> Wonders of AI
+                    </a>
+                    <p>Explore the most exciting AI challenges and innovative solutions from talented teams around the world.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/kare-oss/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        <!-- <a href="#" class="social-icon"><i class="fab fa-discord"></i></a> -->
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                        <li><a href="{{ url_for('problems') }}">Problems</a></li>
+                        <li><a href="{{ url_for('leaderboard') }}">Leaderboard</a></li>
+                        <li><a href="{{ url_for('resources') }}">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="{{ url_for('resources') }}">Documentation</a></li>
+                        <li><a href="{{ url_for('resources') }}">API Reference</a></li>
+                        <li><a href="{{ url_for('resources') }}">Learning Tools</a></li>
+                        <li><a href="{{ url_for('resources') }}">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:kareoss@klu.ac.in">kareoss@klu.ac.in</a></li>
+                        <!-- <li><a href="tel:+1234567890">+1 (234) 567-890</a></li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Wonders of AI Hackathon. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/animation.js') }}"></script>
+    <script>
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({behavior: 'smooth'});
+            }
+        }
+    </script>
+    <script>
+        // Mobile menu toggle - main handler
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("DOM loaded"); // Debug message
+            
+            // Remove any existing event listeners before adding new ones
+            const hamburgerBtn = document.querySelector('.navbar-hamburger');
+            const navMenu = document.querySelector('.navbar-menu');
+            const body = document.body;
+            
+            if (hamburgerBtn) {
+                // Remove old listeners first
+                const newHamburger = hamburgerBtn.cloneNode(true);
+                hamburgerBtn.parentNode.replaceChild(newHamburger, hamburgerBtn);
+                
+                // Add fresh event listener
+                newHamburger.addEventListener('click', function(event) {
+                    console.log("Hamburger clicked");
+                    event.stopPropagation();
+                    navMenu.classList.toggle('active');
+                    newHamburger.classList.toggle('active');
+                    body.classList.toggle('menu-active');
+                });
+                
+                // Close menu when clicking menu items
+                const menuItems = document.querySelectorAll('.navbar-menu .navbar-item');
+                menuItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        navMenu.classList.remove('active');
+                        newHamburger.classList.remove('active');
+                        body.classList.remove('menu-active');
+                    });
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (body.classList.contains('menu-active') && 
+                        !navMenu.contains(event.target) && 
+                        !newHamburger.contains(event.target)) {
+                        navMenu.classList.remove('active');
+                        newHamburger.classList.remove('active');
+                        body.classList.remove('menu-active');
+                    }
+                });
+            }
+        });
+    </script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>
