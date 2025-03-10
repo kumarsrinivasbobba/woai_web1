@@ -9,9 +9,15 @@ venv.bak/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
+*.py[cod]
+*$py.class
 
 .pytest_cache/
 
 # Flask stuff:
 instance/
 .webassets-cache
+
+# Miscellaneous
+*.log
+.DS_Store
