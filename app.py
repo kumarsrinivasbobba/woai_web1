@@ -3,12 +3,13 @@ import json
 import os
 import datetime
 
+# Update your file path definitions to use absolute paths
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+LEADERBOARD_FILE = os.path.join(BASE_DIR, 'data', 'leaderboard.json')
+PROBLEMS_FILE = os.path.join(BASE_DIR, 'data', 'problems.json')
+
 app = Flask(__name__)
 app.secret_key = 'wonders_of_ai_secret_key'  # Required for flash messages
-
-# Data storage (in a real app, you'd use a database)
-LEADERBOARD_FILE = 'data/leaderboard.json'
-PROBLEMS_FILE = 'data/problems.json'
 
 def get_leaderboard():
     if not os.path.exists(LEADERBOARD_FILE):
@@ -212,6 +213,7 @@ def resources():
 
 # Ensure data directory exists
 os.makedirs(os.path.dirname(LEADERBOARD_FILE), exist_ok=True)
+os.makedirs(os.path.dirname(PROBLEMS_FILE), exist_ok=True)
 
 if __name__ == "__main__":
     # For local development
