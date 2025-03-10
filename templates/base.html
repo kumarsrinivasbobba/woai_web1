@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Wonders of AI Hackathon{% endblock %}</title>
+    <title>{% block title %}WONDERS OF AI 2.0 Hackathon{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='site.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -17,7 +16,7 @@
         <div class="container">
             <div class="navbar-brand-container">
                 <a href="{{ url_for('home') }}" class="navbar-brand">
-                    <i class="fas fa-robot"></i> Wonders of AI
+                    <i class="fas fa-robot"></i> WONDERS OF AI
                 </a>
                 <div class="logos-container">
                     <a href="https://kalasalingam.ac.in" target="_blank" class="logo-link">
@@ -62,6 +61,23 @@
 
     <footer>
         <div class="container">
+            <!-- Update the sponsors section with clickable links -->
+            <div class="sponsors-section">
+                <h3>Sponsored by</h3>
+                <div class="sponsors-container">
+                    <div class="sponsor">
+                        <a href="https://kriyaitor.com/" target="_blank" title="Visit Kriyaitor">
+                            <img src="https://wondersofai.netlify.app/Kriyaitor-Logo-18-05-1536x538.png" alt="KRIYAITOR Logo" class="sponsor-logo">
+                        </a>
+                    </div>
+                    <div class="sponsor">
+                        <a href="https://www.ibm.com/support/pages/icebadges/" target="_blank" title="Visit IBM ICE">
+                            <img src="https://ibmice.s3.amazonaws.com/TMS/assets-tms/dash/img/ibm+ice+logo.jpg" alt="IBM ICE Logo" class="sponsor-logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
             <!-- Add logos to footer -->
             <div class="footer-logos">
                 <div class="footer-logos-container">
@@ -78,14 +94,13 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <a href="{{ url_for('home') }}" class="navbar-brand">
-                        <i class="fas fa-robot"></i> Wonders of AI
+                        <i class="fas fa-robot"></i> WONDERS OF AI 2.0
                     </a>
                     <p>Explore the most exciting AI challenges and innovative solutions from talented teams around the world.</p>
                     <div class="social-links">
                         <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
                         <a href="https://www.linkedin.com/in/kare-oss/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                        <!-- <a href="#" class="social-icon"><i class="fab fa-discord"></i></a> -->
                     </div>
                 </div>
                 <div class="footer-links">
@@ -110,12 +125,11 @@
                     <h4>Contact</h4>
                     <ul>
                         <li><a href="mailto:kareoss@klu.ac.in">kareoss@klu.ac.in</a></li>
-                        <!-- <li><a href="tel:+1234567890">+1 (234) 567-890</a></li> -->
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2025 Wonders of AI Hackathon. All rights reserved.
+                &copy; 2025 WONDERS OF AI 2.0 Hackathon. All rights reserved.
             </div>
         </div>
     </footer>
@@ -178,5 +192,74 @@
         });
     </script>
     {% block scripts %}{% endblock %}
+    
+    <style>
+        /* Sponsors section styling for footer */
+        .sponsors-section {
+            margin-top: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        
+        .sponsors-section h3 {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .sponsors-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 15px;
+        }
+        
+        .sponsor {
+            text-align: center;
+            padding: 10px 15px;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .sponsor:hover {
+            transform: translateY(-3px);
+        }
+        
+        .sponsor a {
+            display: block;
+            text-decoration: none;
+            border: none;
+            background: transparent;
+        }
+        
+        .sponsor-logo {
+            height: 35px;
+            width: auto;
+            max-width: 150px;
+            object-fit: contain;
+            transition: filter 0.3s ease;
+        }
+        
+        .sponsor:hover .sponsor-logo {
+            filter: brightness(1.2); /* Slightly brighten on hover */
+        }
+        
+        @media (max-width: 768px) {
+            .sponsors-container {
+                gap: 20px;
+            }
+            
+            .sponsor-logo {
+                height: 30px;
+                max-width: 120px;
+            }
+        }
+    </style>
 </body>
 </html>
