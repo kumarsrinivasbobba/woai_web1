@@ -11,7 +11,7 @@
         {% if announcements %}
             <div class="announcement-timeline">
                 {% for announcement in announcements|sort(attribute='id', reverse=True) %}
-                <div class="timeline-item {% if loop.index % 2 == 0 %}timeline-right{% else %}timeline-left{% endif %}">
+                <div class="timeline-item {% if loop.index % 2 == 0 %}timeline-right{% else %}timeline-left{% endif %}" data-id="{{ announcement.id }}">
                     <div class="timeline-date-badge">
                         <div class="date">{{ announcement.date.split('-')[2] }}</div>
                         <div class="month">{{ ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][announcement.date.split('-')[1]|int - 1] }}</div>
@@ -27,6 +27,7 @@
                         <h3 class="announcement-title">{{ announcement.title }}</h3>
                         <div class="announcement-meta">
                             <span class="announcement-author"><i class="fas fa-user"></i> {{ announcement.author }}</span>
+                            <span class="announcement-date"><i class="fas fa-calendar-alt"></i> {{ announcement.date }}</span>
                         </div>
                         <div class="announcement-content">
                             <p>{{ announcement.content }}</p>
@@ -270,9 +271,10 @@
         color: var(--text-muted);
         font-size: 0.9rem;
         margin-bottom: 12px;
+        gap: 15px;
     }
     
-    .announcement-author {
+    .announcement-author, .announcement-date {
         display: flex;
         align-items: center;
         gap: 5px;
@@ -376,6 +378,19 @@
         color: var(--text-muted);
     }
     
+    /* Empty state styling */
+    .empty-state {
+        text-align: center;
+        padding: 60px 0;
+        color: var(--text-muted);
+    }
+    
+    .empty-icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        opacity: 0.7;
+    }
+
     /* Mobile responsive design */
     @media (max-width: 768px) {
         .announcement-timeline::before {
@@ -423,18 +438,70 @@
             max-width: 100%;
         }
     }
-    
-    /* Empty state styling */
-    .empty-state {
-        text-align: center;
-        padding: 60px 0;
-        color: var(--text-muted);
+
+    /* Animations for timeline items */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
     
-    .empty-icon {
-        font-size: 3rem;
-        margin-bottom: 20px;
-        opacity: 0.7;
+    .timeline-item {
+        opacity: 0;
+        animation: fadeInUp 0.5s ease forwards;
     }
+    
+    .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+    .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+    .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+    .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+    .timeline-item:nth-child(5) { animation-delay: 0.5s; }
 </style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Make the timeline points pulse when scrolled into view
+    document.addEventListener('DOMContentLoaded', function() {
+        // Fix for the missing JS files in console
+        if (typeof createAnimation === 'undefined') {
+            window.createAnimation = function() { 
+                console.log('Animation placeholder function');
+            };
+        }
+        
+        // Function to check if an element is in the viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+        
+        // Add animation to timeline points when they come into view
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        
+        function checkItems() {
+            timelineItems.forEach(item => {
+                if (isInViewport(item)) {
+                    item.classList.add('in-view');
+                }
+            });
+        }
+        
+        // Run once on load
+        checkItems();
+        
+        // Run on scroll
+        window.addEventListener('scroll', checkItems);
+    });
+</script>
 {% endblock %}
