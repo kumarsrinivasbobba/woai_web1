@@ -14,9 +14,7 @@
                     <tr>
                         <th>Rank</th>
                         <th>Team</th>
-                        <th>Score</th>
-                        <th>Problems Solved</th>
-                        <th>Last Submission</th>
+                        <th>Selected Problem Statement</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,9 +22,7 @@
                     <tr>
                         <td><span class="rank {% if loop.index <= 3 %}rank-{{ loop.index }}{% endif %}">{{ loop.index }}</span></td>
                         <td>{{ team.name }}</td>
-                        <td>{{ team.score }}</td>
-                        <td>{{ team.problems_solved }}</td>
-                        <td>{{ team.last_submission }}</td>
+                        <td>{{ team.selected_problem }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

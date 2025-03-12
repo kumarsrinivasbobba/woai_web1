@@ -69,27 +69,29 @@
         <div class="features-grid">
             <div class="problem-card">
                 <div class="problem-header">
-                    <h3 class="problem-title">AI-Powered Healthcare Diagnostics</h3>
-                    <span class="problem-difficulty difficulty-medium">Medium</span>
+                    <h3 class="problem-title">AI-Powered Diabetic Retinopathy Diagnosis</h3>
+                    <span class="problem-category category-healthcare">Healthcare</span>
                 </div>
-                <p class="problem-description">Develop an AI system that can analyze medical images to detect and classify various conditions with high accuracy.</p>
+                <p class="problem-description">Develop a deep learning system that analyzes retinal images to detect early signs of diabetic retinopathy. The project should explore advanced image preprocessing and feature extraction techniques to assist healthcare professionals in early intervention.</p>
                 <div class="problem-footer">
                     <div class="problem-tags">
-                        <span class="problem-tag">Computer Vision</span>
-                        <span class="problem-tag">Healthcare</span>
+                        <span class="problem-tag">Deep Learning</span>
+                        <span class="problem-tag">Image Processing</span>
+                        <span class="problem-tag">Medical Diagnostics</span>
                     </div>
                     <a href="{{ url_for('problems') }}" class="btn-secondary">View Details</a>
                 </div>
             </div>
             <div class="problem-card">
                 <div class="problem-header">
-                    <h3 class="problem-title">Sustainable Energy Optimization</h3>
-                    <span class="problem-difficulty difficulty-hard">Hard</span>
+                    <h3 class="problem-title">Smart Irrigation Scheduling via Reinforcement Learning</h3>
+                    <span class="problem-category category-agriculture">Agriculture</span>
                 </div>
-                <p class="problem-description">Create an AI-based system to optimize energy consumption and reduce carbon footprint in smart buildings.</p>
+                <p class="problem-description">Create a reinforcement learning system that optimizes water usage in agriculture. The model should adapt to varying weather conditions, soil moisture levels, and crop types to enhance irrigation efficiency.</p>
                 <div class="problem-footer">
                     <div class="problem-tags">
                         <span class="problem-tag">Reinforcement Learning</span>
+                        <span class="problem-tag">Optimization</span>
                         <span class="problem-tag">Sustainability</span>
                     </div>
                     <a href="{{ url_for('problems') }}" class="btn-secondary">View Details</a>
@@ -97,14 +99,15 @@
             </div>
             <div class="problem-card">
                 <div class="problem-header">
-                    <h3 class="problem-title">Intelligent Traffic Management</h3>
-                    <span class="problem-difficulty difficulty-easy">Easy</span>
+                    <h3 class="problem-title">Real-Time Financial Fraud Detection</h3>
+                    <span class="problem-category category-finance">Finance</span>
                 </div>
-                <p class="problem-description">Build a traffic management system that uses AI to optimize signal timings and reduce congestion in urban areas.</p>
+                <p class="problem-description">Design an AI system that employs anomaly detection techniques to flag fraudulent transactions in real time. Address challenges like imbalanced datasets and evolving fraud patterns while ensuring scalability and accuracy.</p>
                 <div class="problem-footer">
                     <div class="problem-tags">
-                        <span class="problem-tag">Optimization</span>
-                        <span class="problem-tag">Smart Cities</span>
+                        <span class="problem-tag">Anomaly Detection</span>
+                        <span class="problem-tag">Real-time Systems</span>
+                        <span class="problem-tag">Security</span>
                     </div>
                     <a href="{{ url_for('problems') }}" class="btn-secondary">View Details</a>
                 </div>
@@ -141,4 +144,50 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
 </script>
+
+<style>
+    /* Category-specific colors for the home page */
+    .problem-category {
+        display: inline-block;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+    
+    .category-healthcare {
+        background-color: rgba(94, 190, 218, 0.2);
+        color: #5ebedc;
+    }
+    
+    .category-finance {
+        background-color: rgba(105, 220, 156, 0.2);
+        color: #69dc9c;
+    }
+    
+    .category-agriculture {
+        background-color: rgba(126, 211, 76, 0.2);
+        color: #7ed34c;
+    }
+    
+    .category-education {
+        background-color: rgba(255, 184, 76, 0.2);
+        color: #ffb84c;
+    }
+    
+    .category-security {
+        background-color: rgba(233, 99, 99, 0.2);
+        color: #e96363;
+    }
+    
+    .category-nlp {
+        background-color: rgba(186, 104, 237, 0.2);
+        color: #ba68ed;
+    }
+    
+    .category-computer-vision {
+        background-color: rgba(108, 99, 255, 0.2);
+        color: #6c63ff;
+    }
+</style>
 {% endblock %}

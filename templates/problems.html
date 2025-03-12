@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Problems - WONDERS OF AI 2.0Hackathon{% endblock %}
+{% block title %}Problems - WONDERS OF AI 2.0 Hackathon{% endblock %}
 
 {% block content %}
 <section class="problems">
@@ -13,12 +13,12 @@
             <div class="problem-card">
                 <div class="problem-header">
                     <h3 class="problem-title">{{ problem.title }}</h3>
-                    <span class="problem-difficulty difficulty-{{ problem.difficulty|lower }}">{{ problem.difficulty }}</span>
+                    <span class="problem-category">{{ problem.tags[0] }}</span>
                 </div>
                 <p class="problem-description">{{ problem.description }}</p>
                 <div class="problem-footer">
                     <div class="problem-tags">
-                        {% for tag in problem.tags %}
+                        {% for tag in problem.tags[1:] %}
                         <span class="problem-tag">{{ tag }}</span>
                         {% endfor %}
                     </div>
@@ -40,7 +40,9 @@
     <div class="modal-content">
         <span class="close-modal">&times;</span>
         <h2 id="modal-title"></h2>
-        <span id="modal-difficulty" class="problem-difficulty"></span>
+        <div class="modal-category-container">
+            <span id="modal-category" class="problem-category"></span>
+        </div>
         <div id="modal-description" style="margin-top: 15px;"></div>
         
         <div id="requirements-section" style="margin-top: 20px;">
@@ -65,7 +67,7 @@
         
         <div style="margin-top: 30px;">
             <a href="{{ url_for('resources') }}" class="btn-primary">View Learning Resources</a>
-            <a href="#" onclick="window.open('https://github.com/wonders-of-ai/hackathon-challenges', '_blank')" class="btn-secondary">View Code Examples</a>
+            <a href="#" onclick="window.open('https://github.com/KARE-OPEN-SOURCE-SOCEITY/KARE-OSS-ML-DL-LEARNING-DEV-KITS', '_blank')" class="btn-secondary">View Code Examples</a>
         </div>
     </div>
 </div>
@@ -95,7 +97,7 @@
         {% for problem in problems %}
         "{{ problem.id }}": {
             title: "{{ problem.title }}",
-            difficulty: "{{ problem.difficulty }}",
+            category: "{{ problem.tags[0] }}",
             description: "{{ problem.description }}",
             requirements: {{ problem.get('requirements', [])|tojson }},
             criteria: {{ problem.get('criteria', [])|tojson }},
@@ -114,8 +116,7 @@
             
             if (problem) {
                 document.getElementById('modal-title').textContent = problem.title;
-                document.getElementById('modal-difficulty').textContent = problem.difficulty;
-                document.getElementById('modal-difficulty').className = 'problem-difficulty difficulty-' + problem.difficulty.toLowerCase();
+                document.getElementById('modal-category').textContent = problem.category;
                 document.getElementById('modal-description').textContent = problem.description;
                 
                 // Requirements
@@ -232,6 +233,20 @@
         
         .close-modal:hover {
             color: var(--text-color);
+        }
+        
+        .problem-category {
+            display: inline-block;
+            background-color: rgba(108, 99, 255, 0.2);
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .modal-category-container {
+            margin-top: 10px;
         }
         
         @keyframes fadeIn {
