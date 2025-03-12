@@ -7,6 +7,7 @@ import datetime
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 LEADERBOARD_FILE = os.path.join(BASE_DIR, 'data', 'leaderboard.json')
 PROBLEMS_FILE = os.path.join(BASE_DIR, 'data', 'problems.json')
+ANNOUNCEMENTS_FILE = os.path.join(BASE_DIR, 'data', 'announcements.json')
 
 app = Flask(__name__)
 app.secret_key = 'wonders_of_ai_secret_key'  # Required for flash messages
@@ -19,43 +20,50 @@ def get_leaderboard():
                 "name": "AI Avengers",
                 "score": 850,
                 "problems_solved": 4,
-                "last_submission": "2025-03-09 14:23:45"
+                "last_submission": "2025-03-09 14:23:45",
+                "selected_problem": "AI-Powered Diabetic Retinopathy Diagnosis"
             },
             {
                 "name": "Neural Nexus",
                 "score": 720,
                 "problems_solved": 3,
-                "last_submission": "2025-03-09 10:15:30"
+                "last_submission": "2025-03-09 10:15:30",
+                "selected_problem": "Predictive Hospital Readmission Analytics"
             },
             {
                 "name": "Deep Thinkers",
                 "score": 680,
                 "problems_solved": 3,
-                "last_submission": "2025-03-08 22:05:12"
+                "last_submission": "2025-03-08 22:05:12",
+                "selected_problem": "Real-Time Financial Fraud Detection"
             },
             {
                 "name": "Code Wizards",
                 "score": 550,
                 "problems_solved": 2,
-                "last_submission": "2025-03-08 18:30:45"
+                "last_submission": "2025-03-08 18:30:45",
+                "selected_problem": "Stock Market Sentiment & Trend Forecasting"
             },
             {
                 "name": "Quantum Coders",
                 "score": 480,
                 "problems_solved": 2,
-                "last_submission": "2025-03-08 16:42:20"
+                "last_submission": "2025-03-08 16:42:20",
+                "selected_problem": "Drone-Based Crop Disease Identification"
             },
             {
                 "name": "Binary Brains",
                 "score": 320,
                 "problems_solved": 1,
-                "last_submission": "2025-03-07 20:15:10"
+                "last_submission": "2025-03-07 20:15:10",
+                "selected_problem": "Smart Irrigation Scheduling via Reinforcement Learning"
             },
             {
                 "name": "ML Mavericks",
                 "score": 300,
                 "problems_solved": 1,
-                "last_submission": "2025-03-07 15:40:22"
+                "last_submission": "2025-03-07 15:40:22",
+                "selected_problem": "Urban Traffic Flow Optimization"
             }
         ]
         
@@ -183,6 +191,57 @@ def get_problems():
     with open(PROBLEMS_FILE, 'r') as f:
         return json.load(f)
 
+def get_announcements():
+    if not os.path.exists(ANNOUNCEMENTS_FILE):
+        # Create sample announcements if file doesn't exist
+        sample_announcements = [
+            {
+                "id": 1,
+                "title": "Welcome to WONDERS OF AI 2.0!",
+                "content": "We're excited to welcome all participants to our second annual AI hackathon. Get ready for an incredible 24 hours of innovation, collaboration, and cutting-edge technology.",
+                "date": "2025-03-01",
+                "important": True,
+                "author": "Organizing Committee"
+            },
+            {
+                "id": 2,
+                "title": "Problem Statements Released",
+                "content": "All problem statements for the hackathon are now available. Please explore the problems section to review the challenges and begin planning your approach. Remember to check the resources section for helpful tools and tutorials.",
+                "date": "2025-03-05",
+                "important": True,
+                "author": "Technical Team"
+            },
+            {
+                "id": 3,
+                "title": "Workshop Schedule Update",
+                "content": "We've added an additional AI Ethics workshop on March 12 at 3:00 PM. This session will cover important considerations for responsible AI development. All participants are encouraged to attend.",
+                "date": "2025-03-08",
+                "important": False,
+                "author": "Events Coordinator"
+            },
+            {
+                "id": 4,
+                "title": "Final Week Preparations",
+                "content": "With just one week left until the hackathon, ensure you've completed all pre-requisites, set up your environment, and familiarized yourself with the schedule. We recommend setting up your GitHub repositories in advance and reviewing the judging criteria.",
+                "date": "2025-03-06",
+                "important": False,
+                "author": "Organizing Committee"
+            }
+        ]
+        
+        # Ensure directory exists before writing file
+        os.makedirs(os.path.dirname(ANNOUNCEMENTS_FILE), exist_ok=True)
+        
+        # Write sample data to file
+        with open(ANNOUNCEMENTS_FILE, 'w') as f:
+            json.dump(sample_announcements, f, indent=4)
+        
+        return sample_announcements
+    
+    # If file exists, read from it
+    with open(ANNOUNCEMENTS_FILE, 'r') as f:
+        return json.load(f)
+
 @app.route("/")
 def home():
     return render_template("home.html")
@@ -211,9 +270,21 @@ def schedule():
 def resources():
     return render_template("resources.html")
 
+@app.route("/announcements")
+def announcements():
+    announcements_data = get_announcements()
+    # Sort announcements by date (newest first) and pinned status
+    announcements_data = sorted(
+        announcements_data,
+        key=lambda x: (not x.get('important', False), datetime.datetime.strptime(x['date'], '%Y-%m-%d')),
+        reverse=True
+    )
+    return render_template("announcements.html", announcements=announcements_data)
+
 # Ensure data directory exists
 os.makedirs(os.path.dirname(LEADERBOARD_FILE), exist_ok=True)
 os.makedirs(os.path.dirname(PROBLEMS_FILE), exist_ok=True)
+os.makedirs(os.path.dirname(ANNOUNCEMENTS_FILE), exist_ok=True)
 
 if __name__ == "__main__":
     # For local development
