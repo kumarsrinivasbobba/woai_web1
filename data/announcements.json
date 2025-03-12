@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "title": "Welcome to WONDERS OF AI 2.0!",
+        "content": "We're excited to welcome all participants to our second annual AI hackathon. Get ready for an incredible 24 hours of innovation, collaboration, and cutting-edge technology.",
+        "date": "2025-03-01",
+        "important": true,
+        "author": "Organizing Committee",
+        "links": [
+            {
+                "title": "Participation Guidelines",
+                "url": "/resources#guidelines"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Problem Statements Released",
+        "content": "All problem statements for the hackathon are now available. Please explore the problems section to review the challenges and begin planning your approach. Remember to check the resources section for helpful tools and tutorials.",
+        "date": "2025-03-05",
+        "important": true,
+        "author": "Technical Team",
+        "links": [
+            {
+                "title": "View Problem Statements",
+                "url": "/problems"
+            },
+            {
+                "title": "Browse Learning Resources",
+                "url": "/resources"
+            }
+        ],
+        "attachments": [
+            {
+                "name": "Participant Handbook.pdf",
+                "url": "/static/files/WoAI-Participant-Handbook.pdf",
+                "type": "pdf",
+                "size": "2.4 MB"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Workshop Schedule Update",
+        "content": "We've added an additional AI Ethics workshop on March 12 at 3:00 PM. This session will cover important considerations for responsible AI development. All participants are encouraged to attend.",
+        "date": "2025-03-08",
+        "important": false,
+        "author": "Events Coordinator",
+        "links": [
+            {
+                "title": "Register for Workshop",
+                "url": "https://forms.google.com/register-ai-ethics"
+            },
+            {
+                "title": "View Full Schedule",
+                "url": "/schedule"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Final Week Preparations",
+        "content": "With just one week left until the hackathon, ensure you've completed all pre-requisites, set up your environment, and familiarized yourself with the schedule. We recommend setting up your GitHub repositories in advance and reviewing the judging criteria.",
+        "date": "2025-03-06",
+        "important": false,
+        "author": "Organizing Committee",
+        "attachments": [
+            {
+                "name": "Environment Setup Guide.pdf",
+                "url": "/static/files/WoAI-Environment-Setup.pdf",
+                "type": "pdf",
+                "size": "1.8 MB"
+            },
+            {
+                "name": "Judging Criteria.docx",
+                "url": "/static/files/WoAI-Judging-Criteria.docx",
+                "type": "doc",
+                "size": "540 KB"
+            }
+        ]
+    }
+]
