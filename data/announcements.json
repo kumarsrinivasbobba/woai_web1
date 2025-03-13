@@ -31,12 +31,20 @@
         "content": "All the teams are requested to fill the team details and problem statement details in the form. Only one person is sopposed to fill the form. Important Note for Participants: As the hackathon offers three options, there is no fixed template for the presentation. You are free to design your presentation in your own way. Guidelines: Minimum: 5 slides, Maximum: 10 slides Prepare effectively! All the best!",
         "date": "2025-03-13",
         "important": true,
-        "author": "KARE OSS Team",
+        "author": "Technical Team",
         "links": [
             {
                 "title": "Select problem statements",
                 "url": "https://forms.gle/KMDZcxKMk7YxmSqW9"
             }
         ]
+    },
+    {
+        "id": 4,
+        "important":true,
+        "date":"2025-03-14",
+        "author":"KARE OSS Team",
+        "title": "Final Review Update",
+        "content": "The final review will be conducted on 14th March 2025 at 7:30 AM. The teams are requested to be ready with their final implementations and presentations. All the best!"
     }
 ]
