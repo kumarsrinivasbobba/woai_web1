@@ -24,5 +24,19 @@
                 "url": "/resources"
             }
         ]
+    },
+    {
+        "id": 3,
+        "title": "Selecet problem statements",
+        "content": "All the teams are requested to fill the team details and problem statement details in the form. Only one person is sopposed to fill the form. Important Note for Participants: As the hackathon offers three options, there is no fixed template for the presentation. You are free to design your presentation in your own way. Guidelines: Minimum: 5 slides, Maximum: 10 slides Prepare effectively! All the best!",
+        "date": "2025-03-13",
+        "important": true,
+        "author": "KARE OSS Team",
+        "links": [
+            {
+                "title": "Selecet problem statements",
+                "url": "https://forms.gle/KMDZcxKMk7YxmSqW9"
+            }
+        ]
     }
 ]
