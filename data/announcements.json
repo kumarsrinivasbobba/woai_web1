@@ -3,8 +3,26 @@
         "id": 1,
         "title": "Welcome to WONDERS OF AI 2.0!",
         "content": "We're excited to welcome all participants to our second annual AI hackathon. Get ready for an incredible 24 hours of innovation, collaboration, and cutting-edge technology.",
-        "date": "2025-03-01",
+        "date": "2025-03-13",
         "important": true,
         "author": "KARE OSS Team"
+    },
+    {
+        "id": 2,
+        "title": "Problem Statements Released",
+        "content": "All problem statements for the hackathon are now available. Please explore the problems section to review the challenges and begin planning your approach. Remember to check the resources section for helpful tools and tutorials.",
+        "date": "2025-03-13",
+        "important": true,
+        "author": "Technical Team",
+        "links": [
+            {
+                "title": "View Problem Statements",
+                "url": "/problems"
+            },
+            {
+                "title": "Browse Learning Resources",
+                "url": "/resources"
+            }
+        ]
     }
 ]
