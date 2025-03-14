@@ -46,5 +46,19 @@
         "author":"KARE OSS Team",
         "title": "Final Review Update",
         "content": "The final review will be conducted on 14th March 2025 at 7:30 AM. The teams are requested to be ready with their final implementations and presentations. All the best!"
+    },
+    {
+        "id": 5,
+        "title": "Results Updated",
+        "content": "The results of the hackathon are updated. Please check the leaderboard section to know the winners.",
+        "date": "2025-03-14",
+        "important": true,
+        "author": "Technical Team",
+        "links": [
+            {
+                "title": "View Leaderboard",
+                "url": "/leaderboard"
+            }
+        ]
     }
 ]
